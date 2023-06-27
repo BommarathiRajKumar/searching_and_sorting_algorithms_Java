@@ -46,22 +46,14 @@ import java.io.*;
 public class LinearSearch {
 
 	public static int linearSearch(int arr[], int size, int element) {
-		if (size == 0) {
-			return -1;
-		}
-		else if (arr[size-1] == element) {
-			return size-1;
-		}
-		else {
-			return linearSearch(arr, size-1, element);
-		}
+		if (size == 0) return -1;
+		else if (arr[size-1] == element) return size-1;
+		else return linearSearch(arr, size-1, element);
 	}
-
 	// Driver method to check
 	public static void main(String[] args) {
         int arr[] = { 5, 15, 6, 9, 4 };
 		int element = 4;
-
 		int reult = linearSearch(arr, arr.length, element);
 
 		if (reult != -1)
