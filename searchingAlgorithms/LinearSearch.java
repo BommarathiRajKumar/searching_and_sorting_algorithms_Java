@@ -15,7 +15,7 @@ public class LinearSearch {
         }
         return -1;
     }
-
+    
     //Drive method to check
     public static void main(String args[]){
         int array[]={1,2,3,4,5};
@@ -24,24 +24,17 @@ public class LinearSearch {
         int result=linearSearch(array, element);
 
         if(result != -1){
-            System.out.print(y+" is present at index of "+result);
+            System.out.print(element+" is present at index of "+result);
         }else{
             System.out.print("Not present in array");
         }
-
-        
-
-    }
-    
+    } 
 }
 
 
 
-
 //Recursive Code For Linear Search
-/*
-import java.io.*;
-
+/*import java.io.*;
 public class LinearSearch {
 
 	public static int linearSearch(int arr[], int size, int element) {
@@ -61,4 +54,4 @@ public class LinearSearch {
 			System.out.println("The element " + element + " is not found in the given array.");
 	}
 }
- */
+*/
