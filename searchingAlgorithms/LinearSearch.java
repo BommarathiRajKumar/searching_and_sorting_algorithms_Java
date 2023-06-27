@@ -9,20 +9,20 @@ public class LinearSearch {
         • Auxiliary Space: O(1) as except the variable to iterate through the list, no other variable is used.
     */
 
-    public static int linearSearch(int arr[], int require){
+    public static int linearSearch(int arr[], int element){
         int len=arr.length;
         for(int i=0; i<len; i++){
-            if(arr[i]==require)return i;
+            if(arr[i]==element)return i;
         }
         return -1;
     }
 
-    //Drive code to check
+    //Drive method to check
     public static void main(String args[]){
         int array[]={1,2,3,4,5};
-        int y=5;
+        int element=5;
 
-        int result=linearSearch(array, y);
+        int result=linearSearch(array, element);
 
         if(result != -1){
             System.out.print(y+" is present at index of "+result);
@@ -35,3 +35,39 @@ public class LinearSearch {
     }
     
 }
+
+
+
+
+//Recursive Code For Linear Search
+/*
+import java.io.*;
+
+public class LinearSearch {
+
+	public static int linearSearch(int arr[], int size, int element) {
+		if (size == 0) {
+			return -1;
+		}
+		else if (arr[size-1] == element) {
+			return size-1;
+		}
+		else {
+			return linearSearch(arr, size-1, element);
+		}
+	}
+
+	// Driver method to check
+	public static void main(String[] args) {
+        int arr[] = { 5, 15, 6, 9, 4 };
+		int element = 4;
+
+		int reult = linearSearch(arr, arr.length, element);
+
+		if (reult != -1)
+			System.out.println("The element " + element + " is found at "+ reult + " index of the given array.");
+		else
+			System.out.println("The element " + element + " is not found in the given array.");
+	}
+}
+ */
