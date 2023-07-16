@@ -10,20 +10,20 @@ class Sort{
         divide(arr, 0, arr.length-1);
     }
     
-    private static void divide(int arr[], int low, int high){
-        if(low>=high)return;
-        int mid=(low+high)/2;
-        divide(arr,low,mid);
-        divide(arr,mid+1,high);
-        merge(arr,low,mid,high);
+    private static void divide(int arr[], int start, int end){
+        if(start>=end)return;
+        int mid=(start+end)/2;
+        divide(arr,start,mid);
+        divide(arr,mid+1,end);
+        merge(arr,start,mid,end);
     }
-    private static void merge(int arr[], int low, int mid, int high){
+    private static void merge(int arr[], int start, int mid, int end){
         ArrayList<Integer> obj=new ArrayList<>();
-        //low.....mid;
-        //mid+1.....high;
-        int left=low;
+        //first array = start-----mid;
+        //second array = mid+1----end;
+        int left=start;
         int right=mid+1;
-        while(left<=mid && right<=high){
+        while(left<=mid && right<=end){
             if(arr[left]<=arr[right]){
                 obj.add(arr[left]);
                 left++;
@@ -36,12 +36,12 @@ class Sort{
             obj.add(arr[left]);
             left++;
         }
-        while(right<=high){
+        while(right<=end){
             obj.add(arr[right]);
             right++;
         }
-        for(int i=low; i<=high; i++){
-            arr[i]=(int)obj.get(i-low);
+        for(int i=start; i<=end; i++){
+            arr[i]=(int)obj.get(i-start);
         }
     }
 }
